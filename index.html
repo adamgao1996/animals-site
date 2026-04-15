@@ -87,14 +87,20 @@
     }
     .card-left { display: flex; align-items: center; gap: 0.7rem; }
     .logo {
-      font-size: 1.8rem;
       width: 44px;
       height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #1e293b;
+      background: #fff;
       border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .logo img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
     }
     .card-top h2 { font-size: 1.05rem; font-weight: 700; }
     .reward {
@@ -183,7 +189,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-left">
-            <div class="logo">💳</div>
+            <div class="logo"><img src="https://logo.clearbit.com/discover.com" alt="Discover"></div>
             <h2>Discover Card</h2>
           </div>
           <span class="badge live">● Live</span>
@@ -196,7 +202,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-left">
-            <div class="logo">💸</div>
+            <div class="logo"><img src="https://logo.clearbit.com/wise.com" alt="Wise"></div>
             <h2>Wise</h2>
           </div>
           <span class="badge live">● Live</span>
@@ -215,7 +221,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-left">
-            <div class="logo">📈</div>
+            <div class="logo"><img src="https://logo.clearbit.com/moomoo.com" alt="moomoo"></div>
             <h2>moomoo</h2>
           </div>
           <span class="badge live">● Live</span>
@@ -228,7 +234,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-left">
-            <div class="logo">🛍️</div>
+            <div class="logo"><img src="https://logo.clearbit.com/rakuten.com" alt="Rakuten"></div>
             <h2>Rakuten</h2>
           </div>
           <span class="badge live">● Live</span>
@@ -247,7 +253,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-left">
-            <div class="logo">🍔</div>
+            <div class="logo"><img src="https://logo.clearbit.com/ubereats.com" alt="Uber Eats"></div>
             <h2>Uber Eats</h2>
           </div>
           <span class="badge live">● Live</span>
@@ -266,7 +272,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-left">
-            <div class="logo">📱</div>
+            <div class="logo"><img src="https://logo.clearbit.com/fi.google.com" alt="Google Fi"></div>
             <h2>Google Fi Wireless</h2>
           </div>
           <span class="badge live">● Live</span>
@@ -283,7 +289,7 @@
     <div class="pending-grid">
 
       <div class="pending-card">
-        <div class="logo">🏦</div>
+        <div class="logo"><img src="https://logo.clearbit.com/bmo.com" alt="BMO"></div>
         <div class="pending-info">
           <h3>BMO Bank</h3>
           <p>$50 per referral, up to $500. Friends get up to $800 in cash bonuses.</p>
@@ -292,7 +298,7 @@
       </div>
 
       <div class="pending-card">
-        <div class="logo">🚂</div>
+        <div class="logo"><img src="https://logo.clearbit.com/railway.app" alt="Railway"></div>
         <div class="pending-info">
           <h3>Railway</h3>
           <p>15% of referred users' paid revenue for a year. Great for dev friends.</p>
@@ -301,7 +307,7 @@
       </div>
 
       <div class="pending-card">
-        <div class="logo">💎</div>
+        <div class="logo"><img src="https://logo.clearbit.com/americanexpress.com" alt="Amex"></div>
         <div class="pending-info">
           <h3>Amex Platinum</h3>
           <p>If you have it, Amex referrals often pay 10k–30k points per approved friend.</p>
@@ -310,7 +316,7 @@
       </div>
 
       <div class="pending-card">
-        <div class="logo">✈️</div>
+        <div class="logo"><img src="https://logo.clearbit.com/aa.com" alt="American Airlines"></div>
         <div class="pending-info">
           <h3>American Airlines AAdvantage</h3>
           <p>You're a member — AA sometimes runs referral promos for bonus miles.</p>
