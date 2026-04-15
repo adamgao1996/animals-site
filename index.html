@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>动物世界</title>
+  <title>Adam's Referral Links</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -17,141 +17,165 @@
       padding: 3rem 1rem 2rem;
       background: linear-gradient(135deg, #1e3a5f, #0f172a);
     }
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-    header p {
-      margin-top: 0.5rem;
-      color: #94a3b8;
-      font-size: 1.1rem;
-    }
+    header h1 { font-size: 2.2rem; font-weight: 800; }
+    header p { margin-top: 0.5rem; color: #94a3b8; font-size: 1rem; }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 1.5rem;
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 2.5rem auto;
       padding: 0 1.5rem 3rem;
     }
     .card {
       background: #1e293b;
       border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 1.5rem;
       border: 1px solid #334155;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .card.coming-soon { opacity: 0.5; }
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
-    .card-emoji {
-      font-size: 5rem;
+    .logo {
+      font-size: 2rem;
+      width: 48px;
       text-align: center;
-      padding: 2rem;
-      background: #0f172a;
     }
-    .card-body {
-      padding: 1.25rem 1.5rem 1.5rem;
+    .card-top h2 { font-size: 1.2rem; font-weight: 700; }
+    .reward {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #34d399;
     }
-    .card-body h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-    .tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      background: #334155;
+    .desc {
+      font-size: 0.9rem;
       color: #94a3b8;
-      border-radius: 99px;
+      line-height: 1.5;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
       padding: 2px 10px;
-      margin-bottom: 0.75rem;
+      border-radius: 99px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      font-weight: 600;
     }
-    .card-body p {
-      color: #94a3b8;
-      line-height: 1.6;
-      font-size: 0.95rem;
+    .badge.live { background: #064e3b; color: #6ee7b7; }
+    .badge.soon { background: #1e293b; color: #64748b; border: 1px solid #334155; }
+    .btn {
+      display: block;
+      text-align: center;
+      background: #3b82f6;
+      color: white;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: auto;
+      transition: background 0.15s;
     }
-    .fact {
-      margin-top: 0.9rem;
-      padding: 0.6rem 0.9rem;
-      background: #0f172a;
-      border-left: 3px solid #3b82f6;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.88rem;
-      color: #7dd3fc;
+    .btn:hover { background: #2563eb; }
+    .btn.disabled {
+      background: #1e293b;
+      color: #475569;
+      border: 1px solid #334155;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🌍 动物世界</h1>
-    <p>地球上最有趣的几位居民</p>
+    <h1>💸 Adam's Referral Links</h1>
+    <p>Sign up through these links — we both win</p>
   </header>
   <div class="grid">
 
     <div class="card">
-      <div class="card-emoji">🦁</div>
-      <div class="card-body">
-        <h2>非洲狮</h2>
-        <span class="tag">哺乳动物</span>
-        <p>非洲草原的顶级捕食者，以群居生活著称。雄狮的鬃毛是力量和地位的象征。</p>
-        <div class="fact">⚡ 奔跑速度可达 80 km/h，但只能维持短距离冲刺。</div>
+      <div class="card-top">
+        <div class="logo">🛍️</div>
+        <div>
+          <h2>Rakuten</h2>
+          <span class="badge live">● Live</span>
+        </div>
       </div>
+      <div class="reward">$50 each</div>
+      <div class="desc">Get cash back at 3,500+ stores. Sign up with my link, spend $50, and we both get $50.</div>
+      <a class="btn" href="https://www.rakuten.com/r/ADAMGA171" target="_blank">Get $50 → rakuten.com/r/ADAMGA171</a>
     </div>
 
-    <div class="card">
-      <div class="card-emoji">🐋</div>
-      <div class="card-body">
-        <h2>蓝鲸</h2>
-        <span class="tag">海洋哺乳动物</span>
-        <p>地球上有史以来最大的动物，体长可达 33 米，重约 200 吨。</p>
-        <div class="fact">⚡ 心脏大小相当于一辆小汽车，心跳声在数公里外可以听到。</div>
+    <div class="card coming-soon">
+      <div class="card-top">
+        <div class="logo">💳</div>
+        <div>
+          <h2>Discover Card</h2>
+          <span class="badge soon">Coming Soon</span>
+        </div>
       </div>
+      <div class="reward">$100 each</div>
+      <div class="desc">Refer a friend to Discover — both of us get $100 statement credit when they're approved.</div>
+      <a class="btn disabled" href="#">Link coming soon</a>
     </div>
 
-    <div class="card">
-      <div class="card-emoji">🦅</div>
-      <div class="card-body">
-        <h2>金雕</h2>
-        <span class="tag">猛禽</span>
-        <p>北半球最强大的猛禽之一，翼展可达 2.3 米，视力是人类的 8 倍。</p>
-        <div class="fact">⚡ 俯冲速度超过 240 km/h，是地球上最快的俯冲动物之一。</div>
+    <div class="card coming-soon">
+      <div class="card-top">
+        <div class="logo">📈</div>
+        <div>
+          <h2>moomoo</h2>
+          <span class="badge soon">Coming Soon</span>
+        </div>
       </div>
+      <div class="reward">Free stocks</div>
+      <div class="desc">Commission-free trading app. Deposit via my link and get free stocks including potential NVDA shares.</div>
+      <a class="btn disabled" href="#">Link coming soon</a>
     </div>
 
-    <div class="card">
-      <div class="card-emoji">🐼</div>
-      <div class="card-body">
-        <h2>大熊猫</h2>
-        <span class="tag">濒危物种</span>
-        <p>中国特有的国宝，99% 的食物是竹子。全球野生数量约 1800 只。</p>
-        <div class="fact">⚡ 每天要吃 12–38 公斤的竹子来维持能量需求。</div>
+    <div class="card coming-soon">
+      <div class="card-top">
+        <div class="logo">🏦</div>
+        <div>
+          <h2>BMO Bank</h2>
+          <span class="badge soon">Coming Soon</span>
+        </div>
       </div>
+      <div class="reward">$50 each</div>
+      <div class="desc">Open a BMO chequing account with my link. You get up to $800 in bonuses, I get $50.</div>
+      <a class="btn disabled" href="#">Link coming soon</a>
     </div>
 
-    <div class="card">
-      <div class="card-emoji">🐙</div>
-      <div class="card-body">
-        <h2>章鱼</h2>
-        <span class="tag">软体动物</span>
-        <p>拥有三个心脏、蓝色血液和分布式神经系统——每条触手都有独立的"大脑"。</p>
-        <div class="fact">⚡ 能在几秒内完全改变皮肤颜色和纹理来伪装自己。</div>
+    <div class="card coming-soon">
+      <div class="card-top">
+        <div class="logo">🚂</div>
+        <div>
+          <h2>Railway</h2>
+          <span class="badge soon">Coming Soon</span>
+        </div>
       </div>
+      <div class="reward">15% credits</div>
+      <div class="desc">Cloud hosting for developers. I earn 15% of your paid usage for a year when you sign up with my link.</div>
+      <a class="btn disabled" href="#">Link coming soon</a>
     </div>
 
-    <div class="card">
-      <div class="card-emoji">🐘</div>
-      <div class="card-body">
-        <h2>非洲象</h2>
-        <span class="tag">哺乳动物</span>
-        <p>陆地上最大的动物，拥有极强的记忆力和复杂的社会情感，甚至会哀悼同伴。</p>
-        <div class="fact">⚡ 鼻子有超过 40,000 块肌肉，能举起 300 公斤重的物体。</div>
+    <div class="card coming-soon">
+      <div class="card-top">
+        <div class="logo">🍔</div>
+        <div>
+          <h2>Uber Eats</h2>
+          <span class="badge soon">Coming Soon</span>
+        </div>
       </div>
+      <div class="reward">$15 off</div>
+      <div class="desc">Get $15 off your first Uber Eats order when you use my referral code.</div>
+      <a class="btn disabled" href="#">Link coming soon</a>
     </div>
 
   </div>
