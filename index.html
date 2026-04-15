@@ -16,6 +16,7 @@
       text-align: center;
       padding: 4rem 1rem 2.5rem;
       background: radial-gradient(ellipse at top, #1a2f5a 0%, #0a0f1e 70%);
+      position: relative;
     }
     header h1 {
       font-size: 2.6rem;
@@ -39,6 +40,32 @@
     .stat { text-align: center; }
     .stat-num { font-size: 1.5rem; font-weight: 800; color: #60a5fa; }
     .stat-label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .lang-toggle {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      display: flex;
+      background: #1e293b;
+      border-radius: 99px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-toggle button {
+      background: none;
+      border: none;
+      color: #64748b;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .lang-toggle button.active {
+      background: #3b82f6;
+      color: #fff;
+    }
 
     main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
 
@@ -138,7 +165,6 @@
     }
     .btn:hover { opacity: 0.85; }
 
-    /* Pending section */
     .pending-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -166,16 +192,20 @@
 </head>
 <body>
   <header>
+    <div class="lang-toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')">中文</button>
+    </div>
     <h1>💸 Adam's Referrals</h1>
-    <p>Use these links — we both win</p>
+    <p data-en="Use these links — we both win" data-zh="用这些链接 — 双方都受益">Use these links — we both win</p>
     <div class="stats">
       <div class="stat">
         <div class="stat-num">11</div>
-        <div class="stat-label">Active Links</div>
+        <div class="stat-label" data-en="Active Links" data-zh="有效链接">Active Links</div>
       </div>
       <div class="stat">
         <div class="stat-num">$360+</div>
-        <div class="stat-label">You Can Save</div>
+        <div class="stat-label" data-en="You Can Save" data-zh="最高可省">You Can Save</div>
       </div>
     </div>
   </header>
@@ -183,7 +213,7 @@
   <main>
 
     <!-- Finance -->
-    <div class="section-title">💳 Finance & Banking</div>
+    <div class="section-title" data-en="💳 Finance & Banking" data-zh="💳 金融 & 银行">💳 Finance & Banking</div>
     <div class="grid">
 
       <div class="card">
@@ -194,9 +224,14 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">Cash back</div>
-        <div class="desc">Chase Freedom Unlimited® or Freedom Flex®. Earn cash back on every purchase — we both win when you're approved.</div>
-        <a class="btn" href="https://www.referyourchasecard.com/18m/CIPUADW4ZK" target="_blank">Apply now →</a>
+        <div class="reward" data-en="Cash back" data-zh="现金返还">Cash back</div>
+        <div class="desc"
+          data-en="Chase Freedom Unlimited® or Freedom Flex®. Earn cash back on every purchase — we both win when you're approved."
+          data-zh="Chase Freedom Unlimited® 或 Freedom Flex®。每笔消费都有现金返还 — 审批通过后双方受益。">
+          Chase Freedom Unlimited® or Freedom Flex®. Earn cash back on every purchase — we both win when you're approved.
+        </div>
+        <a class="btn" href="https://www.referyourchasecard.com/18m/CIPUADW4ZK" target="_blank"
+          data-en="Apply now →" data-zh="立即申请 →">Apply now →</a>
       </div>
 
       <div class="card">
@@ -207,9 +242,14 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">125K or 75K pts</div>
-        <div class="desc">Sapphire Reserve®: 125,000 bonus points. Sapphire Preferred®: 75,000 bonus points. Both of us win when you're approved.</div>
-        <a class="btn" href="https://www.referyourchasecard.com/19v/6DTGF96F8D" target="_blank">Apply now →</a>
+        <div class="reward" data-en="125K or 75K pts" data-zh="最高125K积分">125K or 75K pts</div>
+        <div class="desc"
+          data-en="Sapphire Reserve®: 125,000 bonus points. Sapphire Preferred®: 75,000 bonus points. Both of us win when you're approved."
+          data-zh="Sapphire Reserve®: 12.5万开卡奖励积分。Sapphire Preferred®: 7.5万积分。审批通过后双方受益。">
+          Sapphire Reserve®: 125,000 bonus points. Sapphire Preferred®: 75,000 bonus points. Both of us win when you're approved.
+        </div>
+        <a class="btn" href="https://www.referyourchasecard.com/19v/6DTGF96F8D" target="_blank"
+          data-en="Apply now →" data-zh="立即申请 →">Apply now →</a>
       </div>
 
       <div class="card">
@@ -220,9 +260,14 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">Rewards for both</div>
-        <div class="desc">Browse all Amex cards — Platinum, Gold, Blue Cash, and more. Apply through my link and we could both earn rewards.</div>
-        <a class="btn" href="https://americanexpress.com/en-us/referral/all-cards?ref=YIXUAGtJqh&xl=cp10pr" target="_blank">Browse cards →</a>
+        <div class="reward" data-en="Rewards for both" data-zh="双方同享奖励">Rewards for both</div>
+        <div class="desc"
+          data-en="Browse all Amex cards — Platinum, Gold, Blue Cash, and more. Apply through my link and we could both earn rewards."
+          data-zh="浏览所有Amex卡 — 白金卡、金卡、Blue Cash等。通过我的链接申请，双方均可获得奖励。">
+          Browse all Amex cards — Platinum, Gold, Blue Cash, and more. Apply through my link and we could both earn rewards.
+        </div>
+        <a class="btn" href="https://americanexpress.com/en-us/referral/all-cards?ref=YIXUAGtJqh&xl=cp10pr" target="_blank"
+          data-en="Browse cards →" data-zh="浏览卡片 →">Browse cards →</a>
       </div>
 
       <div class="card">
@@ -233,9 +278,14 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">$100 each</div>
-        <div class="desc">Get a Discover card and make any purchase in the first 3 months. We both get a $100 statement credit.</div>
-        <a class="btn" href="https://refer.discover.com/adamgao19964!3eea8829fb!a" target="_blank">Get $100 →</a>
+        <div class="reward" data-en="$100 each" data-zh="各得$100">$100 each</div>
+        <div class="desc"
+          data-en="Get a Discover card and make any purchase in the first 3 months. We both get a $100 statement credit."
+          data-zh="申请Discover卡并在3个月内消费，双方各获$100消费积分。">
+          Get a Discover card and make any purchase in the first 3 months. We both get a $100 statement credit.
+        </div>
+        <a class="btn" href="https://refer.discover.com/adamgao19964!3eea8829fb!a" target="_blank"
+          data-en="Get $100 →" data-zh="领取$100 →">Get $100 →</a>
       </div>
 
       <div class="card">
@@ -246,15 +296,20 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">Fee-free transfer</div>
-        <div class="desc">Send money internationally at the real exchange rate. Fee-free on your first transfer.</div>
-        <a class="btn" href="https://wise.com/invite/ahpc/yixuang2" target="_blank">Get started →</a>
+        <div class="reward" data-en="Fee-free transfer" data-zh="免手续费转账">Fee-free transfer</div>
+        <div class="desc"
+          data-en="Send money internationally at the real exchange rate. Fee-free on your first transfer."
+          data-zh="按真实汇率国际转账，首次免手续费。">
+          Send money internationally at the real exchange rate. Fee-free on your first transfer.
+        </div>
+        <a class="btn" href="https://wise.com/invite/ahpc/yixuang2" target="_blank"
+          data-en="Get started →" data-zh="立即使用 →">Get started →</a>
       </div>
 
     </div>
 
     <!-- Investing -->
-    <div class="section-title">📈 Investing</div>
+    <div class="section-title" data-en="📈 Investing" data-zh="📈 投资">📈 Investing</div>
     <div class="grid">
 
       <div class="card">
@@ -265,15 +320,20 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">Free stocks</div>
-        <div class="desc">Commission-free trading. Deposit via my link for free stocks — potential NVDA shares included.</div>
-        <a class="btn" href="https://j.moomoo.com/0s7e0q" target="_blank">Get free stocks →</a>
+        <div class="reward" data-en="Free stocks" data-zh="免费股票">Free stocks</div>
+        <div class="desc"
+          data-en="Commission-free trading. Deposit via my link for free stocks — potential NVDA shares included."
+          data-zh="免佣金交易。通过我的链接入金即可领取免费股票，可能包含NVDA。">
+          Commission-free trading. Deposit via my link for free stocks — potential NVDA shares included.
+        </div>
+        <a class="btn" href="https://j.moomoo.com/0s7e0q" target="_blank"
+          data-en="Get free stocks →" data-zh="领取免费股票 →">Get free stocks →</a>
       </div>
 
     </div>
 
     <!-- Shopping & Cashback -->
-    <div class="section-title">🛍️ 返现 & 购物</div>
+    <div class="section-title" data-en="🛍️ Cashback & Shopping" data-zh="🛍️ 返现 & 购物">🛍️ Cashback & Shopping</div>
     <div class="grid">
 
       <div class="card">
@@ -284,15 +344,20 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">$50 each</div>
-        <div class="desc">Cash back at 3,500+ stores. Sign up, spend $50, and we both get $50 back.</div>
-        <a class="btn" href="https://www.rakuten.com/r/ADAMGA171" target="_blank">Get $50 →</a>
+        <div class="reward" data-en="$50 each" data-zh="各得$50">$50 each</div>
+        <div class="desc"
+          data-en="Cash back at 3,500+ stores. Sign up, spend $50, and we both get $50 back."
+          data-zh="3500+商家享现金返还。注册并消费$50，双方各得$50。">
+          Cash back at 3,500+ stores. Sign up, spend $50, and we both get $50 back.
+        </div>
+        <a class="btn" href="https://www.rakuten.com/r/ADAMGA171" target="_blank"
+          data-en="Get $50 →" data-zh="领取$50 →">Get $50 →</a>
       </div>
 
     </div>
 
     <!-- Food & Lifestyle -->
-    <div class="section-title">🍔 Food & Lifestyle</div>
+    <div class="section-title" data-en="🍔 Food & Lifestyle" data-zh="🍔 美食 & 生活">🍔 Food & Lifestyle</div>
     <div class="grid">
 
       <div class="card">
@@ -303,9 +368,14 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">$100 新人礼包</div>
-        <div class="desc">亚洲美食外卖平台。用我的链接注册，输入邀请码 <strong>716226r</strong>，即可领取 $100 新人礼包。</div>
-        <a class="btn" href="https://share.hungrypanda.vip/v4yeu" target="_blank">立即注册 →</a>
+        <div class="reward" data-en="$100 New User Bonus" data-zh="$100 新人礼包">$100 New User Bonus</div>
+        <div class="desc"
+          data-en-html="Asian food delivery. Sign up with my link and enter code <strong>716226r</strong> to claim a $100 new user bonus."
+          data-zh-html="亚洲美食外卖平台。用我的链接注册，输入邀请码 <strong>716226r</strong>，即可领取 $100 新人礼包。">
+          Asian food delivery. Sign up with my link and enter code <strong>716226r</strong> to claim a $100 new user bonus.
+        </div>
+        <a class="btn" href="https://share.hungrypanda.vip/v4yeu" target="_blank"
+          data-en="Sign up →" data-zh="立即注册 →">Sign up →</a>
       </div>
 
       <div class="card">
@@ -316,15 +386,20 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">$20 off</div>
-        <div class="desc">$20 off your first order of $25+. Use the code at checkout.</div>
-        <a class="btn" href="https://ubereats.com/feed?promoCode=eats-s1utqxg9ur" target="_blank">Code: eats-s1utqxg9ur →</a>
+        <div class="reward" data-en="$20 off" data-zh="立减$20">$20 off</div>
+        <div class="desc"
+          data-en="$20 off your first order of $25+. Use the code at checkout."
+          data-zh="首单满$25立减$20，结账时输入优惠码。">
+          $20 off your first order of $25+. Use the code at checkout.
+        </div>
+        <a class="btn" href="https://ubereats.com/feed?promoCode=eats-s1utqxg9ur" target="_blank"
+          data-en="Code: eats-s1utqxg9ur →" data-zh="优惠码: eats-s1utqxg9ur →">Code: eats-s1utqxg9ur →</a>
       </div>
 
     </div>
 
     <!-- Tech -->
-    <div class="section-title">📱 Tech & Services</div>
+    <div class="section-title" data-en="📱 Tech & Services" data-zh="📱 科技 & 服务">📱 Tech & Services</div>
     <div class="grid">
 
       <div class="card">
@@ -335,9 +410,14 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">额外5折优惠</div>
-        <div class="desc">在Samsung官网购物享额外5%优惠。使用邀请码 <strong>ref-aiqifg</strong> 或点击链接直接到账。</div>
-        <a class="btn" href="https://www.samsung.com/us/shop/referral-deals/?referralCode=ref-aiqifg" target="_blank">领取优惠 →</a>
+        <div class="reward" data-en="Extra 5% off" data-zh="额外5%优惠">Extra 5% off</div>
+        <div class="desc"
+          data-en-html="Get an extra 5% off at Samsung.com. Use code <strong>ref-aiqifg</strong> or click the link."
+          data-zh-html="在Samsung官网购物享额外5%优惠。使用邀请码 <strong>ref-aiqifg</strong> 或点击链接直接到账。">
+          Get an extra 5% off at Samsung.com. Use code <strong>ref-aiqifg</strong> or click the link.
+        </div>
+        <a class="btn" href="https://www.samsung.com/us/shop/referral-deals/?referralCode=ref-aiqifg" target="_blank"
+          data-en="Get discount →" data-zh="领取优惠 →">Get discount →</a>
       </div>
 
       <div class="card">
@@ -348,23 +428,35 @@
           </div>
           <span class="badge live">● Live</span>
         </div>
-        <div class="reward">$60 credit</div>
-        <div class="desc">Flexible phone plan, no contracts. Get $60 credit when you switch to Google Fi.</div>
-        <a class="btn" href="https://g.co/fi/r/D233NN" target="_blank">Get $60 →</a>
+        <div class="reward" data-en="$60 credit" data-zh="$60话费券">$60 credit</div>
+        <div class="desc"
+          data-en="Flexible phone plan, no contracts. Get $60 credit when you switch to Google Fi."
+          data-zh="灵活套餐，无合约束缚。切换到Google Fi即得$60话费券。">
+          Flexible phone plan, no contracts. Get $60 credit when you switch to Google Fi.
+        </div>
+        <a class="btn" href="https://g.co/fi/r/D233NN" target="_blank"
+          data-en="Get $60 →" data-zh="领取$60 →">Get $60 →</a>
       </div>
 
     </div>
 
     <!-- Pending -->
-    <div class="section-title">⏳ You Might Have These Too</div>
+    <div class="section-title" data-en="⏳ You Might Have These Too" data-zh="⏳ 你可能也有这些">⏳ You Might Have These Too</div>
     <div class="pending-grid">
 
       <div class="pending-card">
         <div class="logo"><img src="https://www.google.com/s2/favicons?domain=bmo.com&sz=64" alt="BMO"></div>
         <div class="pending-info">
           <h3>BMO Bank</h3>
-          <p>$50 per referral, up to $500. Friends get up to $800 in cash bonuses.</p>
-          <div class="where">→ Get link from BMO app or bmo.com/referafriend</div>
+          <p data-en="$50 per referral, up to $500. Friends get up to $800 in cash bonuses."
+             data-zh="每推荐一人得$50，最高$500。好友可获最高$800现金奖励。">
+            $50 per referral, up to $500. Friends get up to $800 in cash bonuses.
+          </p>
+          <div class="where"
+            data-en="→ Get link from BMO app or bmo.com/referafriend"
+            data-zh="→ 从BMO App或bmo.com/referafriend获取链接">
+            → Get link from BMO app or bmo.com/referafriend
+          </div>
         </div>
       </div>
 
@@ -372,23 +464,56 @@
         <div class="logo"><img src="https://www.google.com/s2/favicons?domain=railway.app&sz=64" alt="Railway"></div>
         <div class="pending-info">
           <h3>Railway</h3>
-          <p>15% of referred users' paid revenue for a year. Great for dev friends.</p>
-          <div class="where">→ Get link at railway.app/account/referrals</div>
+          <p data-en="15% of referred users' paid revenue for a year. Great for dev friends."
+             data-zh="获得被推荐用户一年付费收入的15%。适合开发者朋友。">
+            15% of referred users' paid revenue for a year. Great for dev friends.
+          </p>
+          <div class="where"
+            data-en="→ Get link at railway.app/account/referrals"
+            data-zh="→ 在railway.app/account/referrals获取链接">
+            → Get link at railway.app/account/referrals
+          </div>
         </div>
       </div>
-
 
       <div class="pending-card">
         <div class="logo"><img src="https://www.google.com/s2/favicons?domain=aa.com&sz=64" alt="American Airlines"></div>
         <div class="pending-info">
           <h3>American Airlines AAdvantage</h3>
-          <p>You're a member — AA sometimes runs referral promos for bonus miles.</p>
-          <div class="where">→ Check aa.com or your AAdvantage account</div>
+          <p data-en="You're a member — AA sometimes runs referral promos for bonus miles."
+             data-zh="你是会员 — AA有时会推出推荐奖励积分活动。">
+            You're a member — AA sometimes runs referral promos for bonus miles.
+          </p>
+          <div class="where"
+            data-en="→ Check aa.com or your AAdvantage account"
+            data-zh="→ 查看aa.com或AAdvantage账户">
+            → Check aa.com or your AAdvantage account
+          </div>
         </div>
       </div>
 
     </div>
 
   </main>
+
+  <script>
+    function setLang(lang) {
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+      localStorage.setItem('lang', lang);
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      document.querySelectorAll('[data-en-html]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang + '-html');
+      });
+    }
+
+    // Auto-detect on load
+    const saved = localStorage.getItem('lang');
+    const browserZh = navigator.language.startsWith('zh');
+    setLang(saved || (browserZh ? 'zh' : 'en'));
+  </script>
 </body>
 </html>
